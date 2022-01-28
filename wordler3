@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+
+from wordler import Wordler
+
+w = Wordler()
+
+while True:
+    guess = input("Guess: ")
+    w.guess(guess)

@@ -39,6 +39,7 @@ class Wordler(object):
 
 
     def guess(self, guess_word):
+
         if len(guess_word) != WORD_SIZE:
             return
 
