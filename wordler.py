@@ -7,8 +7,7 @@ MISS = Fore.RED
 HIT = Fore.YELLOW
 EXACT = Fore.GREEN
 
-with open('resources/many-words.txt') as f:
-    words = [word.strip() for word in f if len(word.strip()) == 5]
+WORD_SIZE = 5
 
 class Wordler(object):
 
@@ -20,7 +19,7 @@ class Wordler(object):
         self.exact = []
 
         with open('resources/many-words.txt') as f:
-            self.words = [word.strip() for word in f if len(word.strip()) == 5]
+            self.words = [word.strip() for word in f if len(word.strip()) == WORD_SIZE]
 
         self.word = random.choice(self.words)
 
@@ -40,7 +39,7 @@ class Wordler(object):
 
 
     def guess(self, guess_word):
-        if len(guess_word) != 5:
+        if len(guess_word) != WORD_SIZE:
             return
 
         if guess_word not in self.words:
