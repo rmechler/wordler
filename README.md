@@ -1,2 +1,2 @@
 # wordler
-Python based wordle knock, for practising
+Python based wordle knock off, for practising
