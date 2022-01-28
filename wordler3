@@ -9,4 +9,6 @@ while True:
     if guess == 'answer':
         print(w.word)
         continue
+    if guess == 'done':
+        break
     w.guess(guess)
