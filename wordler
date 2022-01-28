@@ -7,3 +7,9 @@ w = Wordler()
 while True:
     guess = raw_input("Guess: ")
     w.guess(guess)
+    if guess == 'answer':
+        print(w.word)
+        continue
+    if guess == 'done':
+        break
+    w.guess(guess)

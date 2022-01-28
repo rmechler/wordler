@@ -4,7 +4,7 @@ import random
 
 UNUSED = Fore.LIGHTBLACK_EX
 MISS = Fore.RED
-HIT = Fore.YELLOW
+HIT = Fore.BLUE
 EXACT = Fore.GREEN
 
 WORD_SIZE = 5
