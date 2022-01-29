@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 
 from wordler import Wordler
+import sys
 
-w = Wordler()
+w = Wordler(word=sys.argv[1] if len(sys.argv) == 2 else None)
+
+if len(sys.argv) == 2:
+    w.word = sys.argv[1]
 
 while True:
     guess = input("Guess: ")
     if guess == 'answer':
         print(w.word)
         continue
-    if guess == 'done':
+    if guess in ['quit', 'done']:
         break
     w.guess(guess)
