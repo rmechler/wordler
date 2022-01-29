@@ -7,12 +7,14 @@ UNAVAILABLE = Fore.RED
 HIT = Fore.LIGHTBLUE_EX
 EXACT = Fore.GREEN
 
+ALL_LETTERS = [chr(x) for x in range(ord('a'), ord('z') + 1)]
+
 WORD_SIZE = 5
 
 class Wordler(object):
 
     def __init__(self, word=None):
-        self.all = [chr(x) for x in range(ord('a'), ord('z') + 1)]
+
         self.unavailable = []
         self.hit = []
         self.exact = []
@@ -29,16 +31,17 @@ class Wordler(object):
 
 
     def show(self):
-        for letter in self.all:
-            if letter in self.exact:
+
+        for l in ALL_LETTERS:
+            if l in self.exact:
                 color = EXACT
-            elif letter in self.hit:
+            elif l in self.hit:
                 color = HIT
-            elif letter in self.unavailable:
+            elif l in self.unavailable:
                 color = UNAVAILABLE
             else:
                 color = AVAILABLE
-            sys.stdout.write(color + letter)
+            sys.stdout.write(color + l)
 
         print(Fore.RESET)
         sys.stdout.flush()
