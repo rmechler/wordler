@@ -4,7 +4,7 @@ import random
 
 UNUSED = Fore.LIGHTBLACK_EX
 MISS = Fore.RED
-HIT = Fore.BLUE
+HIT = Fore.LIGHTBLUE_EX
 EXACT = Fore.GREEN
 
 WORD_SIZE = 5
@@ -13,7 +13,6 @@ class Wordler(object):
 
     def __init__(self, word=None):
         self.all = [chr(x) for x in range(ord('a'), ord('z') + 1)]
-        # self.unused = self.all[:]
         self.miss = []
         self.hit = []
         self.exact = []
@@ -40,7 +39,8 @@ class Wordler(object):
             else:
                 color = UNUSED
             sys.stdout.write(color + letter)
-        print(Fore.WHITE)
+
+        print(Fore.RESET)
         sys.stdout.flush()
 
 
@@ -73,7 +73,7 @@ class Wordler(object):
                 self.miss.append(letter)
                 sys.stdout.write(Fore.WHITE + '*')
 
-        print(Fore.WHITE)
+        print(Fore.RESET)
         sys.stdout.flush()
 
         if guess_word == self.word:
